@@ -15,7 +15,7 @@ const firebaseConfig = {
 
 // IMPORTANTE: substitua os dois valores pelos e-mails exatos das contas autorizadas.
 // A proteção real também precisa estar configurada nas Regras do Realtime Database.
-const ALLOWED_EMAILS = ["SEU_EMAIL_AQUI", "EMAIL_DA_OUTRA_PESSOA_AQUI"].map(x => x.toLowerCase());
+const ALLOWED_EMAILS = ["crossfit@gmail.com"].map(x => x.toLowerCase());
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getDatabase(app);
