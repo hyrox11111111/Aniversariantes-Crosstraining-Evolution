@@ -1,0 +1,10 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // EXEMPLO: não publique sem configurar a lista/claim de usuários autorizados.
+    // Por padrão, bloqueia todo acesso até que a equipe seja configurada.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

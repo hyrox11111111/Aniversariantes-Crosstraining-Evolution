@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#101010" />
+  <title>Aniversariantes | Crosstraining Evolution</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark">CE</span><div><strong>CROSSTRAINING</strong><b>EVOLUTION</b></div></div>
+    <span class="top-note">PAINEL DA EQUIPE</span>
+  </header>
+  <main>
+    <section class="hero">
+      <p class="eyebrow">NOSSA COMUNIDADE · NOSSA EVOLUÇÃO</p>
+      <h1>ANIVERSARIANTES</h1>
+      <p>Mais do que um treino, somos uma família.</p>
+    </section>
+    <section class="stats">
+      <article class="stat"><span>🎂</span><div><small>Aniversários hoje</small><strong id="todayCount">0</strong></div></article>
+      <article class="stat"><span>👥</span><div><small>Alunos cadastrados</small><strong id="totalCount">0</strong></div></article>
+    </section>
+    <section class="panel">
+      <div class="section-head"><div><p class="eyebrow">GESTÃO DE ALUNOS</p><h2>Cadastro de aniversariantes</h2></div><button id="toggleForm" class="button primary">+ Cadastrar aluno</button></div>
+      <form id="studentForm" class="form hidden">
+        <input type="hidden" id="studentId" />
+        <label>Nome completo<input id="name" required maxlength="100" placeholder="Ex.: Maria Oliveira" /></label>
+        <div class="form-grid">
+          <label>Data de nascimento<input id="birthday" type="date" required /></label>
+          <label>Gênero para a mensagem<select id="gender" required><option value="">Selecione</option><option value="masculino">Masculino</option><option value="feminino">Feminino</option><option value="neutro">Neutro / sem tratamento</option></select></label>
+        </div>
+        <label>Telefone com DDI (opcional)<input id="phone" type="tel" placeholder="Ex.: 5511999999999" /></label>
+        <div class="form-actions"><button type="submit" class="button primary">Salvar aluno</button><button type="button" id="cancelForm" class="button secondary">Cancelar</button></div>
+        <p class="hint">Este protótipo salva os dados neste navegador. Antes de usar com alunos reais, configure o Firebase e as regras de acesso.</p>
+      </form>
+    </section>
+    <section class="panel">
+      <div class="section-head"><div><p class="eyebrow">26 DE OUTUBRO · DATA DO DISPOSITIVO</p><h2>Aniversários de hoje</h2></div><input id="search" class="search" placeholder="Buscar aluno..." /></div>
+      <div id="todayList" class="student-list"></div>
+      <p id="todayEmpty" class="empty">Nenhum aniversariante cadastrado para hoje.</p>
+    </section>
+    <section class="panel">
+      <div class="section-head"><div><p class="eyebrow">AGENDA</p><h2>Próximos aniversários</h2></div></div>
+      <div id="upcomingList" class="student-list"></div>
+      <p id="upcomingEmpty" class="empty">Cadastre alunos para ver os próximos aniversários.</p>
+    </section>
+    <section class="panel">
+      <div class="section-head"><div><p class="eyebrow">PERSONALIZAÇÃO</p><h2>Prévia da mensagem</h2></div></div>
+      <p class="hint">As mensagens são montadas com o nome e o gênero cadastrado. O botão abre o WhatsApp com o texto pronto; você confirma o envio no aplicativo.</p>
+      <div id="messagePreview" class="message-preview">Cadastre um aluno para visualizar uma mensagem personalizada.</div>
+    </section>
+  </main>
+  <footer>DISCIPLINA <span>•</span> CONSTÂNCIA <span>•</span> RESULTADOS</footer>
+  <script src="app.js"></script>
+</body>
+</html>
